@@ -1,10 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+</head>
+
+<body>
+
+    <h2>Solicitud</h2>
+
+    <div class="row">
+      <div class="column" style="background-color:#aaa;">
+        <h2>Cheklist</h2>
+          <p>Generales</p>
+          <p>CVs</p>
+          <p>Estudio Mercado</p>
+          <p>Financiero</p>
+      </div>
+      <div class="column" style="background-color:#bbb;">
+        <h2>Generales</h2>
+          <button onclick="projectLandbot.open()">Proyecto</button>
+          <button onclick="solicitanteLandbot.open()">Solicitante</button>
+          <button onclick="domSolicitanteLandbot.open()">Domicilio del solicitante</button>
+          <button onclick="sizeLandbot.open()">Tamaño de la empresa</button>
+          <button onclick="solidaryLandBot.open()">Obligado solidario</button>
+          <button onclick="guaranteeLandBot.open()">Obligado solidario</button>
+          <button onclick="docsLandBot.open()">Obligado solidario</button>
+          <button type="button" onclick="alert('Lo tenemos resuelto por ti')">Referencias comerciales</button>
+          <button type="button" onclick="alert('Lo tenemos resuelto por ti')">Relaciones comerciales</button>
+          <button type="button" onclick="alert('Lo tenemos resuelto por ti')">Referencias bancarias</button>
+          <button type="button" onclick="alert('Lo tenemos resuelto por ti')">Exposición política</button>
+          <button type="button" onclick="alert('Lo tenemos resuelto por ti')">Buró de crédito</button>
+      </div>
+    </div>
+
+</body>
+</html>
 
 
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var projectLandbot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290096-GZ487S5H4HVLO7MP/index.html',
+  });
+</script>
 
 
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var solicitanteLandbot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290111-ND22JS6UKS8EZKWD/index.html',
+  });
+</script>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var domSolicitanteLandbot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290113-3HGAMP8GEPM9KLNT/index.html',
+  });
+</script>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var sizeLandbot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290115-SKW9QYDO5M6T5FLA/index.html',
+  });
+</script>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var solidaryLandBot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290128-YUPJ393DYK04HFFH/index.html',
+  });
+</script>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var guaranteeLandBot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290130-IOZXR0BC2X9IONJD/index.html',
+  });
+</script>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var docsLandBot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290135-QHBPHPUF4QPJBU3X/index.html',
+  });
+</script>
 
 
-<h1>APPLICATION!</h1>
-
-
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var financeLandBot = new LandbotPopup({
+    index: 'https://landbot.io/u/H-290139-TJPYNL0LDR84E8H6/index.html',
+  });
+</script>
 

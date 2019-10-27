@@ -1,0 +1,228 @@
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KNQFC89');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Hipotemi.com - Credito hipotecario</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="credito hipotecario">
+    <meta name="description" content="Usa la tabla comparativa de crédito hipotecario de Hipotemi.com para encontrar la mejor hipoteca. Explora y compara tasas de interés, pagos mensuales y mínimo de enganche de tu crédito hipotecario.">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'credit/css/open-iconic-bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'credit/css/animate.css'%}">
+
+    <link rel="stylesheet" href="{%static 'credit/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{%static 'credit/css/owl.theme.default.min.css'%}">
+    <link rel="stylesheet" href="{%static 'credit/css/magnific-popup.css'%}">
+
+    <link rel="stylesheet" href="{%static 'credit/css/aos.css'%}">
+
+    <link rel="stylesheet" href="{%static 'credit/css/ionicons.min.css'%}">
+
+    <link rel="stylesheet" href="{%static 'credit/css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" href="{%static 'credit/css/jquery.timepicker.css'%}">
+
+    <link rel="stylesheet" href="{%static 'credit/css/flaticon.css'%}">
+    <link rel="stylesheet" href="{%static 'credit/css/icomoon.css'%}">
+    <link rel="stylesheet" href="{%static 'credit/css/style.css'%}">
+
+	  <!--TABLE-->
+	  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+	  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
+  	  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+
+  </head>
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNQFC89"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+            <a class="navbar-brand" href="/credito-hipotecario">HIPOTEMI<p style="font-size: x-small;">BETA</p></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <!--<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>-->
+	          <!--<li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>-->
+	          <!--<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>-->
+	          <!--<li class="nav-item"><a class="nav-link" href="work.html">Work</a></li>-->
+	          <!--<li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>-->
+	          <!--<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>-->
+	          <!--<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>-->
+	          <!--<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>-->
+	          <li class="nav-item cta"><a href="/credito-hipotecario" class="nav-link"><span>Simular créditos hipotecarios</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	    <!-- END nav -->
+    <!--<div class="hero-wrap ftco-section ftco-counter img" id="section-counter" style="background-image: url('{%static 'credit/images/casas_2.jpg'%}');" data-stellar-background-ratio="0.5">-->
+    <div class="hero-wrap " style="background-color: #fbfbfb;">
+        <div class="row no-gutters d-flex slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+			<div class="container" style="margin-top: 100px; margin-bottom: 100px;">
+			  <h1>Tu crédito hipotecario.</h1>
+			  <table class="table table-bordered table-responsive-md" style="background-color:white; margin-top: 40px;">
+				<thead>
+				  <tr style="color: #000000;">
+                    <th>Banco</th>
+                    <th>Producto</th>
+                    <th>Valor inmueble</th>
+                    <th>Enganche</th>
+                    <th>Tasa de interés</th>
+                    <th>Pago mensual</th>
+				  </tr>
+				</thead>
+                <tbody class="card-body">
+                {% for prods, pagos, ti in values %}
+                  <tr>
+                    <td>{{prods.banco}}</td>
+                    <td>{{prods.nombreProducto}}</td>
+                    <td>${{valor_inmueble}}</td>
+                    <td>${{enganche_}}</td>
+                    <td>{{ti}}%</td>
+                    <td>${{pagos}}</td>
+                  </tr>
+                {%endfor%}
+                </tbody>
+			  </table>
+                <p>* No incluye seguros</p>
+			</div>
+        </div>
+    </div>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">HIPOTEMI</h2>
+              <p>PRÓXIMAMENTE LA FORMA MÁS FÁCIL DE OBTENER TU CRÉDITO HIPOTECARIO</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Mapa de sitio</h2>
+              <ul class="list-unstyled">
+                <li><a href="/credito-hipotecario" class="py-2 d-block">Simulador de créditos</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ftco-footer-widget align-right mb-4">
+            	<h2 class="ftco-heading-2">Contacto</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <!--<li><a href="#"><span class="icon icon-phone"></span><span class="text">+555555</span></a></li>-->
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contacto@hipotemi.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Request a Quote</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control" id="appointment_date" placeholder="Date">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control" id="appointment_time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Get a Quote" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="{%static 'credit/js/jquery.min.js'%}"></script>
+  <script src="{%static 'credit/js/jquery-migrate-3.0.1.min.js'%}"></script>
+  <script src="{%static 'credit/js/popper.min.js'%}"></script>
+  <script src="{%static 'credit/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.easing.1.3.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.waypoints.min.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.stellar.min.js'%}"></script>
+  <script src="{%static 'credit/js/owl.carousel.min.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.magnific-popup.min.js'%}"></script>
+  <script src="{%static 'credit/js/aos.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.animateNumber.min.js'%}"></script>
+  <script src="{%static 'credit/js/bootstrap-datepicker.js'%}"></script>
+  <script src="{%static 'credit/js/jquery.timepicker.min.js'%}"></script>
+  <script src="{%static 'credit/js/scrollax.min.js'%}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{%static 'credit/js/google-map.js'%}"></script>
+  <script src="{%static 'credit/js/main.js'%}"></script>
+
+  </body>
+</html>
