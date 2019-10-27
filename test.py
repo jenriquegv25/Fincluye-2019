@@ -49,7 +49,7 @@ def get_transactions(accounts):
     return out
 
 
-plot_name="fincluyeapp/index/static/index/images_plot/plot_"
+plot_name="fincluyeapp/index/static/index/img/plot_"
 plot_number=0
 def plot_transactions(transactions):
     global plot_number,plot_name
@@ -76,7 +76,7 @@ def generate_report():
     document+="\n##Transferencias por cuenta \n"
 
     for i in range(plot_number):
-        document+="![]({}{}.png)\n".format("images_plot/plot_",i)
+        document+="![]({}{}.png)\n".format("img/plot_",i)
 
     html = markdown.markdown(document)
     with open('fincluyeapp/static/index/analisis.html',"w") as fil:
