@@ -49,7 +49,7 @@ def get_transactions(accounts):
     return out
 
 
-plot_name="fincluyeapp/static/index/images_plot/plot_"
+plot_name="fincluyeapp/index/static/index/images_plot/plot_"
 plot_number=0
 def plot_transactions(transactions):
     global plot_number,plot_name
