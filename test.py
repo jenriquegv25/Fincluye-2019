@@ -79,7 +79,7 @@ def generate_report():
         document+="![]({}{}.png)\n".format("img/plot_",i)
 
     html = markdown.markdown(document)
-    with open('fincluyeapp/static/index/analisis.html',"w") as fil:
+    with open('fincluyeapp/index/static/index/analisis.html',"w") as fil:
         fil.write(html)
 
     return html
