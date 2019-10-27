@@ -10,6 +10,14 @@ DL_TOKEN    = { 'Authorization' : 'DirectLogin token=' }
 
 CONTENT_JSON  = { 'content-type'  : 'application/json' }
 
+def dummy():
+    print("hi")
+    exit()
+
+def getCostumerById(bank,ide):
+    response = requests.get(u"{0}/obp/{1}/banks/{2}/customers/{3}".format(BASE_URL, API_VERSION, bank, ide), headers=mergeHeaders(DL_TOKEN, CONTENT_JSON))
+    return response.json()
+
 def setCounterParty(bank_id, account_id,counterparty_id, counterparty_iban):
     global COUNTERPARTY_BANK, OUR_COUNTERPARTY, OUR_COUNTERPARTY_ID, OUR_COUNTERPARTY_IBAN
     COUNTERPARTY_BANK = bank_id
@@ -85,6 +93,9 @@ def getCounterpartyId():
 
 def getCounterpartyIban():
     return OUR_COUNTERPARTY_IBAN
+
+def dummy():
+    print("hi")
 
 # Get banks
 def getBanks():
@@ -163,6 +174,12 @@ def initiateTransactionRequest(bank, account, challenge_type, cp_bank, cp_accoun
     challenge_type + '"}'
     response = requests.post(u"{0}/obp/v2.2.0/banks/{1}/accounts/{2}/owner/transaction-request-types/{3}/transaction-requests".format(BASE_URL, bank, account, challenge_type), data=payload, headers=mergeHeaders(DL_TOKEN, CONTENT_JSON))
     return response.json()
+
+
+def createCustomer(bank,name):
+    data = {  "legal_name":name,
+              "mobile_phone_number":"+44 07972 444 876",  "email":"eveline@example.com",  "face_image":{    "url":"www.openbankproject",    "date":"2017-09-19T00:00:00Z"  },  "date_of_birth":"2017-09-19T00:00:00Z",  "relationship_status":"single",  "dependants":10,  "dob_of_dependants":["2017-09-19T00:00:00Z"],  "credit_rating":{    "rating":"OBP",    "source":"OBP"  },  "credit_limit":{    "currency":"EUR",    "amount":"10"  },  "highest_education_attained":"Master",  "employment_status":"worker",  "kyc_status":true,  "last_ok_date":"2017-09-19T00:00:00Z",  "title":"Dr.",  "branchId":"DERBY6",  "nameSuffix":"Sr"}
+    response = requests.post(u"{0}/obp/v2.2.0/banks/{1}/customers".format(BASE_URL, bank), data=data, headers=mergeHeaders(DL_TOKEN, CONTENT_JSON))
 
 # Create counterparty, input data format: 
 # {

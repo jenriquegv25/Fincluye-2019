@@ -2,12 +2,14 @@
 
 OUR_BANK     = 'fincluye.0001.mx.fincluye'
 
-USERNAME     = 'omega16'
-PASSWORD     = 'Omega16-_-12'
+USERNAME     = 'Santiago.Fincluye.0001'
+PASSWORD     = 'X!e064fa32'
 CONSUMER_KEY = 'nd1inyhsr35phlirthmrhywb4j4fhd2gkm5cl4dd'
 
+USER_ID = "bd521c08-ba75-4c23-bb83-33cfd4af97aa"
+
 # API server URL
-BASE_URL  = "https://fincluye-explorer.openbankproject.com/"
+BASE_URL  = "https://fincluye.openbankproject.com"
 API_VERSION  = "v4.0.0"
 
 # API server will redirect your browser to this URL, should be non-functional
